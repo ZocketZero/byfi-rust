@@ -44,7 +44,7 @@ pub fn bytes_to_file(argv: &mut Vec<String>) {
     let mut content_byte = content_split
         .iter()
         .map(|f| {
-            u8::from_str_radix(f, options.base_type as u32).expect("Error convert string to number")
+            u8::from_str_radix(f.trim(), options.base_type as u32).expect("Error convert string to number")
         })
         .collect::<Vec<u8>>();
     if let Some(v) = options.key {
